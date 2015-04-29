@@ -128,7 +128,10 @@ public class KeySelectDialogPreference extends DialogPreference implements OnKey
 	@TargetApi(12)
 	@Override
 	public boolean onKey(DialogInterface dialog, int keyCode, KeyEvent event) {
-		if(keyCode != KeyEvent.KEYCODE_BACK) {
+		if(keyCode != KeyEvent.KEYCODE_BACK || keyCode != KeyEvent.KEYCODE_ENTER ||
+		   keyCode != KeyEvent.KEYCODE_DPAD_DOWN || keyCode != KeyEvent.KEYCODE_DPAD_UP ||
+		   keyCode != KeyEvent.KEYCODE_DPAD_LEFT || keyCode != KeyEvent.KEYCODE_DPAD_RIGHT) {
+		   	
 			this.keyCode = keyCode;
 			
 			if(android.os.Build.VERSION.SDK_INT >= 12) {
